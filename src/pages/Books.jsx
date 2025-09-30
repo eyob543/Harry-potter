@@ -23,16 +23,28 @@ export default function Books() {
   return (
     <>
       <h1 className="text-center text-4xl font-semibold">Books</h1>
-      <form className="flex justify-center items-start m-4  self-center">
-        <input
-          type="text"
-          placeholder="search"
-          className="bg-black max-w-32 focus-within:max-w-64  px-2"
-          value={search}
-          onChange={handleChange}
-        />
-        <CiSearch className="text-3xl" />
-      </form>
+
+      <div className="flex justify-center mb-12">
+        <div className="flex items-center w-full max-w-2xl bg-yellow-100 rounded-full shadow-lg px-4 py-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5 text-gray-600 mr-3"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <circle cx="11" cy="11" r="8" />
+            <path d="m21 21-4.35-4.35" />
+          </svg>
+          <input
+            type="text"
+            placeholder="Search for anything in the Wizarding World..."
+            className="flex-1 bg-transparent outline-none text-gray-800 placeholder-gray-500"
+            value={search}
+            onChange={handleChange}
+          />
+        </div>
+      </div>
       {search ? (
         <Display to={"bookDetails"} data={filteredData} />
       ) : (
