@@ -1,5 +1,5 @@
 import { NavLink, Outlet } from "react-router-dom";
-import hero_bg from "../assets/hero-bg.png";
+import hero_bg from "../assets/hero.png";
 
 export default function NavBar() {
   function activeLink(isActive) {
@@ -12,11 +12,11 @@ export default function NavBar() {
     <>
       {/* Hero Header */}
       <header
-        className="relative bg-cover bg-center h-[250px] flex flex-col justify-center items-center"
+        className="relative bg-cover bg-center h-svh flex flex-col justify-center items-center"
         style={{ backgroundImage: `url(${hero_bg})` }}
       >
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="absolute inset-0 "></div>
 
         {/* Navigation */}
         <nav className="relative z-10 flex flex-wrap justify-center space-x-8 gap-4">
