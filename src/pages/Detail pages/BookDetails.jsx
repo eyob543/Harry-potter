@@ -11,7 +11,7 @@ export default function BookDetails() {
   const data = useLoaderData();
   const filteredData = _.filter(data, ({ id }) => id === param.id);
   const bookDetail = filteredData[0].attributes;
-
+  const relatedBooks = _.filter(data, ({ id }) => id !== param.id);
   return (
     <div className="bg-black text-gray-200 min-h-screen p-6 flex justify-center">
       <div className="max-w-6xl w-full">
@@ -59,6 +59,39 @@ export default function BookDetails() {
         <div className="mt-10">
           <h2 className="text-2xl font-semibold mb-2">Summary</h2>
           <p className="text-gray-300 leading-relaxed">{bookDetail.summary}</p>
+        </div>
+
+        {/* related books */}
+
+        {/* Related Movies */}
+        <div className="mt-10 w-full">
+          <h2 className="text-2xl font-semibold mb-4">Related Movies</h2>
+          <div className="flex gap-6 ">
+            {relatedBooks.slice(0, 6).map((book) => {
+              const details = book.attributes;
+              return (
+                <a
+                  key={book.id}
+                  href={`/books/${book.id}`}
+                  className="flex-shrink-0 w-48 bg-zinc-800 rounded-xl shadow-md hover:scale-105 transition-transform"
+                >
+                  <img
+                    src={details.cover}
+                    alt={details.title}
+                    className="w-full h-64 object-cover rounded-t-xl"
+                  />
+                  <div className="p-3">
+                    <p className="text-lg font-medium truncate">
+                      {details.title}
+                    </p>
+                    <p className="text-sm text-zinc-400">
+                      {details.release_date}
+                    </p>
+                  </div>
+                </a>
+              );
+            })}
+          </div>
         </div>
       </div>
     </div>

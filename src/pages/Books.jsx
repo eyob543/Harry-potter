@@ -1,5 +1,4 @@
 import { useLoaderData } from "react-router-dom";
-import { CiSearch } from "react-icons/ci";
 import { useState } from "react";
 import fetcher from "../fetch";
 import Display from "../Components/Display";

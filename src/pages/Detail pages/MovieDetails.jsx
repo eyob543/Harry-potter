@@ -1,5 +1,4 @@
-import { useLoaderData, useParams } from "react-router-dom";
-import Display from "../../Components/Display";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 
 import fetcher from "../../fetch";
 import _ from "lodash";
@@ -89,9 +88,35 @@ export default function MovieDetails() {
         </div>
 
         {/* Related Movies (placeholder for now) */}
-        <div className="mt-10">
+        {/* Related Movies */}
+        <div className="mt-10 w-full">
           <h2 className="text-2xl font-semibold mb-4">Related Movies</h2>
-          <Display to={"movieDetails"} data={relatedMovies} />
+          <div className="flex gap-6 ">
+            {relatedMovies.slice(0, 6).map((movie) => {
+              const details = movie.attributes;
+              return (
+                <Link
+                  key={movie.id}
+                  to={`/movieDetails/${movie.id}`}
+                  className="flex-shrink-0 w-48 bg-zinc-800 rounded-xl shadow-md hover:scale-105 transition-transform"
+                >
+                  <img
+                    src={details.poster}
+                    alt={details.title}
+                    className="w-full h-64 object-cover rounded-t-xl"
+                  />
+                  <div className="p-3">
+                    <p className="text-lg font-medium truncate">
+                      {details.title}
+                    </p>
+                    <p className="text-sm text-zinc-400">
+                      {details.release_date}
+                    </p>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
         </div>
       </div>
     </div>

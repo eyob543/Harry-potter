@@ -1,7 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import fetcher from "../fetch";
 import Display from "../Components/Display";
-import { CiSearch } from "react-icons/ci";
 import { useState } from "react";
 import _ from "lodash";
 export function loader() {
