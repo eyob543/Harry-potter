@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import book_cover from "../assets/book-cover.jpg";
-import characters_cover from "../assets/characters-cover.jpg";
-import movie_cover from "../assets/movie-cover.jpg";
-import potion_cover from "../assets/potion-cover.jpg";
-import spells_cover from "../assets/spells-cover.jpg";
+import movie_cover from "../assets/movies-cover.png";
+import book_cover from "../assets/books-cover.png";
+import characters_cover from "../assets/characters-cover.png";
+import spells_cover from "../assets/spells-cover.png";
+import potion_cover from "../assets/potions-cover.png";
 
 export default function Home() {
   return (
@@ -40,13 +40,13 @@ export default function Home() {
       </div>
 
       {/* Cards Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 justify-around">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
         {/* Movies */}
-        <div className="bg-gray-900 rounded-xl overflow-hidden shadow-lg border border-yellow-200">
+        <div className="bg-gray-900 rounded-xl shadow-lg border border-yellow-200">
           <img
             src={movie_cover}
             alt="Harry Potter Movies"
-            className="w-full h-48 object-cover"
+            className="w-full object-cover "
           />
           <div className="p-4 text-left">
             <h2 className="text-xl font-bold text-yellow-300">Movies</h2>
@@ -65,11 +65,11 @@ export default function Home() {
         </div>
 
         {/* Books */}
-        <div className="bg-gray-900 rounded-xl overflow-hidden shadow-lg border border-yellow-200">
+        <div className="bg-gray-900 rounded-xl shadow-lg border border-yellow-200">
           <img
             src={book_cover}
             alt="Harry Potter Books"
-            className="w-full h-48 object-cover"
+            className="w-full object-cover"
           />
           <div className="p-4 text-left">
             <h2 className="text-xl font-bold text-yellow-300">Books</h2>
@@ -88,11 +88,11 @@ export default function Home() {
         </div>
 
         {/* Characters */}
-        <div className="bg-gray-900 rounded-xl overflow-hidden shadow-lg border border-yellow-200">
+        <div className="bg-gray-900 rounded-xl  shadow-lg border border-yellow-200">
           <img
             src={characters_cover}
             alt="Harry Potter Characters"
-            className="w-full h-48 object-cover"
+            className="w-full object-cover"
           />
           <div className="p-4 text-left">
             <h2 className="text-xl font-bold text-yellow-300">Characters</h2>
@@ -111,11 +111,11 @@ export default function Home() {
         </div>
 
         {/* Spells */}
-        <div className="bg-gray-900 rounded-xl overflow-hidden shadow-lg border border-yellow-200">
+        <div className="bg-gray-900 rounded-xl  shadow-lg border border-yellow-200">
           <img
             src={spells_cover}
             alt="Harry Potter Spells"
-            className="w-full h-48 object-cover"
+            className="w-full object-cover"
           />
           <div className="p-4 text-left">
             <h2 className="text-xl font-bold text-yellow-300">Spells</h2>
@@ -133,11 +133,11 @@ export default function Home() {
         </div>
 
         {/* Potions */}
-        <div className="bg-gray-900 rounded-xl overflow-hidden shadow-lg border border-yellow-200">
+        <div className="bg-gray-900 rounded-xl  shadow-lg border border-yellow-200">
           <img
             src={potion_cover}
             alt="Harry Potter Potions"
-            className="w-full h-48 object-cover"
+            className="w-full object-cover"
           />
           <div className="p-4 text-left">
             <h2 className="text-xl font-bold text-yellow-300">Potions</h2>
